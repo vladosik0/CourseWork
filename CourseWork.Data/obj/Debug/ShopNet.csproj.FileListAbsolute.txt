@@ -1,0 +1,9 @@
+D:\VisualStudio Projects\ShopNet\bin\Debug\ShopNet.dll
+D:\VisualStudio Projects\ShopNet\bin\Debug\ShopNet.pdb
+D:\VisualStudio Projects\ShopNet\obj\Debug\ShopNet.csproj.AssemblyReference.cache
+D:\VisualStudio Projects\ShopNet\obj\Debug\ShopNet.csproj.CoreCompileInputs.cache
+D:\VisualStudio Projects\ShopNet\obj\Debug\ShopNet.dll
+D:\VisualStudio Projects\ShopNet\obj\Debug\ShopNet.pdb
+D:\VisualStudio Projects\ShopNet\bin\Debug\Newtonsoft.Json.dll
+D:\VisualStudio Projects\ShopNet\bin\Debug\Newtonsoft.Json.xml
+D:\VisualStudio Projects\ShopNet\obj\Debug\ShopNet.csproj.CopyComplete
