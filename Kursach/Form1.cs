@@ -107,7 +107,7 @@ namespace Kursach
             
             foreach (var salesman in currentShop.ListOfSalesmen)
             {
-                salesmenDT.Rows.Add(salesman.ID, salesman.LastName, salesman.FirstName, salesman.MiddleName, salesman.Salary, salesman.Rate);
+                salesmenDT.Rows.Add(salesman.ID, salesman.LastName, salesman.FirstName, salesman.MiddleName, salesman.Salary, Math.Round(salesman.Rate,2));
             }
             salesmenDV.DataSource = salesmenDT;
             salesmenDV.Columns[0].Visible = false;
