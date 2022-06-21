@@ -29,24 +29,24 @@ namespace Kursach
         //Збереження списку магазинів у файл JSON
         public static void SaveShopItemsInFile()
         {
-            string fileName = "D:/VisualStudio Projects/Kursach/DataBase/shopitems.json";
+            string filePath = "shopitems.json";
             string jsonString = JsonConvert.SerializeObject(Base<Shop>.Items);
-            File.WriteAllText(fileName,jsonString);
+            File.WriteAllText(filePath,jsonString);
         }
         //Збереження списку товарів у асортименті у файл JSON
 
         public static void SaveProductItemsInFile()
         {
-            string fileName = "D:/VisualStudio Projects/Kursach/DataBase/productitems.json";
+            string filePath = "productitems.json";
             string jsonString = JsonConvert.SerializeObject(Shop.ListOfProducts);
-            File.WriteAllText(fileName, jsonString);
+            File.WriteAllText(filePath, jsonString);
         }
         //Зчитування списку магазинів з файла JSON
 
         public static bool ReadShopItemsFromFile()
         {
-            string fileName = "D:/VisualStudio Projects/Kursach/DataBase/shopitems.json";
-            if (!File.Exists(fileName))
+            string filePath = "shopitems.json";
+            if (!File.Exists(filePath))
             {
                 var result = MessageBox.Show("Хочете почати роботу без доданих магазинів, клієнтів і тд?", "Завершення роботи", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
@@ -55,11 +55,11 @@ namespace Kursach
                 }
                 else
                 {
-                    MessageBox.Show("Перевірте папку D:/VisualStudio Projects/Kursach/DataBase на наявність файлу shopitems.json", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Перевірте папку DataBase на наявність файлу shopitems.json", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
-            string jsonString = File.ReadAllText(fileName);
+            string jsonString = File.ReadAllText(filePath);
             Base<Shop>.Items = JsonConvert.DeserializeObject<Dictionary<Guid,Shop>>(jsonString);
             return true;
         }
@@ -67,8 +67,8 @@ namespace Kursach
 
         public static bool ReadProductItemsFromFile()
         {
-            string fileName = "D:/VisualStudio Projects/Kursach/DataBase/productitems.json";
-            if (!File.Exists(fileName))
+            string filePath = "productitems.json";
+            if (!File.Exists(filePath))
             {
                 var result = MessageBox.Show("Хочете почати роботу без доданих магазинів, клієнтів і тд?", "Завершення роботи", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
@@ -77,11 +77,11 @@ namespace Kursach
                 }
                 else
                 {
-                    MessageBox.Show("Перевірте папку D:/VisualStudio Projects/Kursach/DataBase на наявність файлу productitems.json", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Перевірте папку DataBase на наявність файлу productitems.json", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
-            string jsonString = File.ReadAllText(fileName);
+            string jsonString = File.ReadAllText(filePath);
             Base<Product>.Items = JsonConvert.DeserializeObject<Dictionary<Guid, Product>>(jsonString);
             return true;
         }
