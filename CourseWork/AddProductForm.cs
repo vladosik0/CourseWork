@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using ShopNet;
 namespace Kursach
 {
-    public partial class Form5 : Form
+    public partial class AddProductForm : Form
     {
         private Form1 _mainform;
         private class NoShopOpenedException : Exception
@@ -15,7 +15,7 @@ namespace Kursach
 
             }
         }
-        public Form5(Form1 mainform)
+        public AddProductForm(Form1 mainform)
         {
             _mainform = mainform;
             InitializeComponent();
@@ -37,11 +37,6 @@ namespace Kursach
                 Product product = new Product(Guid.NewGuid(),Convert.ToDouble(priceTB.Text), nameTB.Text);
             }
             catch(NoShopOpenedException ex)
-            {
-                MessageBox.Show(ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            catch (ProductException ex)
             {
                 MessageBox.Show(ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

@@ -165,7 +165,7 @@ namespace Kursach
         //Обробка натиснення на кнопку "Відкрити новий магазин"
         private void openShopButton_Click(object sender, EventArgs e)
         {
-            Form2 addNewShop = new Form2(this);
+            OpenShopForm addNewShop = new OpenShopForm(this);
             addNewShop.Show();
         }
         //Обробка натиснення на кнопку "Найняти продавця"
@@ -176,7 +176,7 @@ namespace Kursach
                 MessageBox.Show("Оберіть магазин, куди хочете найняти продавця", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            Form3 addNewSalesman = new Form3(this);
+            HireSalesmanForm addNewSalesman = new HireSalesmanForm(this);
             addNewSalesman.Show();
         }
         //Обробка зміни поточного магазину в Combobox
@@ -227,7 +227,7 @@ namespace Kursach
         //Обробка натиснення на кнопку "Змінити зарплатню"
         private void changeSalary_Click(object sender, EventArgs e)
         {
-            Form4 setSalaryForm = new Form4(this);
+            ChangeSalaryForm setSalaryForm = new ChangeSalaryForm(this);
             try 
             {
                 setSalaryForm.Show();
@@ -244,7 +244,7 @@ namespace Kursach
 
         private void showProductList_Click(object sender, EventArgs e)
         {
-            Form5 showProducts = new Form5(this);
+            AddProductForm showProducts = new AddProductForm(this);
             showProducts.Show();
         }
         //Обробка подвійного натиснення на товар з асортименту для додавання його в кошик
@@ -253,7 +253,7 @@ namespace Kursach
             Guid ID = Guid.Parse(numberOfProductsDV.Rows[numberOfProductsDV.CurrentCell.RowIndex].Cells[0].Value.ToString());
             basketDT.Rows.Add(Shop.ListOfProducts[ID].ID, Shop.ListOfProducts[ID].Name,Shop.ListOfProducts[ID].Price);
             listOfProducts.Add(Shop.ListOfProducts[ID]);
-            Shop.ListOfProducts[ID].isBuyed = true;
+            Shop.ListOfProducts[ID].IsBuyed = true;
             UpdateNumbersOfProductsDT();
             if(Shop.ListOfProducts.Count==0)
             {
@@ -273,7 +273,7 @@ namespace Kursach
                 {
                     throw new EmptyBasketException("Ваш кошик порожній! Будь ласка, наповніть його або дочекайтеся завозу нових товарів");
                 }
-                Form6 buyingForm = new Form6(this);
+                VerifyBuyingForm buyingForm = new VerifyBuyingForm(this);
                 if ((Shop.ListOfShops.Where(s => s.Address.Equals(clientShopCB.SelectedItem.ToString())).Single().ListOfSalesmen.Count)==0)
                 {
                     throw new NoSalesmanException("В цьому магазині немає продавців, оберіть інший!");

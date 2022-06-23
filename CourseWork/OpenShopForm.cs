@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using ShopNet;
 namespace Kursach
 {
-    public partial class Form2 : Form
+    public partial class OpenShopForm : Form
     {
         private Form1 _mainForm;
         private class ShopException : Exception
@@ -14,7 +14,7 @@ namespace Kursach
 
             }
         }
-        public Form2(Form1 mainForm)
+        public OpenShopForm(Form1 mainForm)
         {
             _mainForm = mainForm;
             InitializeComponent();

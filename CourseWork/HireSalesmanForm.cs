@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using ShopNet;
 namespace Kursach
 {
-    public partial class Form3 : Form
+    public partial class HireSalesmanForm : Form
     {
         private Form1 _mainForm;
         private class ListOverFlowException : Exception
@@ -13,7 +13,7 @@ namespace Kursach
 
             }
         }
-        public Form3(Form1 mainForm)
+        public HireSalesmanForm(Form1 mainForm)
         {
             _mainForm = mainForm;
             InitializeComponent();

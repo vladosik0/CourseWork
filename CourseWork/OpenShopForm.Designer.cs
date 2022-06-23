@@ -1,7 +1,7 @@
 ﻿
 namespace Kursach
 {
-    partial class Form2
+    partial class OpenShopForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Kursach
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OpenShopForm));
             this.label1 = new System.Windows.Forms.Label();
             this.getAddress = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();

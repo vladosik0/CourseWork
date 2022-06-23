@@ -3,10 +3,10 @@ using System.Windows.Forms;
 using ShopNet;
 namespace Kursach
 {
-    public partial class Form4 : Form
+    public partial class ChangeSalaryForm : Form
     {
         private Form1 _mainForm;
-        public Form4(Form1 mainForm)
+        public ChangeSalaryForm(Form1 mainForm)
         {
             _mainForm = mainForm;
             InitializeComponent();

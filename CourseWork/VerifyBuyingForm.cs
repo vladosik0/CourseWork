@@ -6,7 +6,7 @@ using ShopNet;
 
 namespace Kursach
 {
-    public partial class Form6 : Form
+    public partial class VerifyBuyingForm : Form
     {
         Form1 _mainForm;
         Shop currentShop;
@@ -45,7 +45,7 @@ namespace Kursach
             }
             basketDV.DataSource = basketDT;
         }
-        public Form6(Form1 mainForm)
+        public VerifyBuyingForm(Form1 mainForm)
         {
             _mainForm = mainForm;
             InitializeComponent();
@@ -113,7 +113,7 @@ namespace Kursach
                 try
                 {
                     Product product = _mainForm.listOfProducts.Where(p => p.ID.Equals(basketDV.SelectedRows[0].Cells[0].Value)).Single();
-                    product.isBuyed = false;
+                    product.IsBuyed = false;
                     sumOfBuying -= product.Price;
                     priceTB.Text = sumOfBuying.ToString();
                     _mainForm.listOfProducts.Remove(product);

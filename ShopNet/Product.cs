@@ -5,10 +5,10 @@ namespace ShopNet
     {
         public double Price { get; set; }
         public string Name { get; private set; }
-        public bool isBuyed { get; set; }
+        public bool IsBuyed { get; set; }
         public Product(Guid ID,double price,string name):base(ID)
         {
-            isBuyed = false;
+            IsBuyed = false;
             Price = price;
             Name = name;
         }

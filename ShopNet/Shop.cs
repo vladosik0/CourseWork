@@ -24,7 +24,7 @@ namespace ShopNet
                 Dictionary<Guid,Product> result = new Dictionary<Guid,Product>();
                 foreach (var item in Base<Product>.Items.Values)
                 {
-                    if (!item.isBuyed)
+                    if (!item.IsBuyed)
                     {
                         result.Add(item.ID,item);
                     }
@@ -100,18 +100,12 @@ namespace ShopNet
         }
         public override bool Equals(object obj)
         {
+            if (obj == null) return false;
             return Address.GetHashCode() == obj.GetHashCode();
         }
         public override int GetHashCode()
         {
             return Address.GetHashCode();
-        }
-    }
-    public class ProductException : Exception
-    {
-        public ProductException(string message) : base(message)
-        {
-
         }
     }
 }
